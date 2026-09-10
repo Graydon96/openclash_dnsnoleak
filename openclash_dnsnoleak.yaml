@@ -9,6 +9,15 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 直连
+  airport2:
+    url: "你的机场订阅链接"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连
 # 机场信息结束，如果有多个机场可以多次复制粘贴机场信息开始到机场信息结束两条注释之间的内容。注意：airport1是机场名字，多个机场不能重复！
 
 #直连节点定义
