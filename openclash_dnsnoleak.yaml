@@ -1,7 +1,7 @@
 proxy-providers:
 # 机场信息开始
-  airport1:
-    url: "你的机场订阅链接"
+  机场1:
+    url: "https://www.baidu.com"
     type: http
     interval: 86400
     health-check:
@@ -9,6 +9,8 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 直连
+# 如有多个，可复制多段，从上一行注释到这一行为一段，为一个订阅链接
+
 # 机场信息结束，如果有多个机场可以多次复制粘贴机场信息开始到机场信息结束两条注释之间的内容。注意：airport1是机场名字，多个机场不能重复！
 
 #直连节点定义
@@ -16,8 +18,8 @@ proxies:
   - {name: 直连, type: direct}
 #节点组
 proxy-groups:
-  - {name: 一键选择, type: select, proxies: [🔯 香港故转, 🔯 台湾故转,🔯 日本故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🚀 默认代理, type: select, proxies: [一键选择, 🔯 香港故转, 🔯 台湾故转,🔯 日本故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 一键选择, type: select, proxies: [自建节点, 🔯 香港故转, 🔯 台湾故转,🔯 日本故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🚀 默认代理, type: select, proxies: [自建节点, 一键选择, 🔯 香港故转, 🔯 台湾故转,🔯 日本故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 📹 YouTube, type: select, proxies: [一键选择, 🔯 香港故转,🔯 台湾故转, 🔯 日本故转, 🔯 新加坡故转,🔯 美国故转, ♻️ 美国自动, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 🍀 Google, type: select, proxies: [一键选择, 🔯 香港故转, 🔯 台湾故转,🔯 日本故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 台湾自动,♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 🤖 AI, type: select, proxies: [一键选择, 🔯 日本故转, 🔯 台湾故转,🔯 新加坡故转, 🔯 美国故转, 🔯 香港故转, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
@@ -30,8 +32,12 @@ proxy-groups:
   - {name: ✈️ Speedtest, type: select, proxies: [一键选择, 🔯 香港故转, 🔯 台湾故转,🔯 日本故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 台湾自动,♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 💶 PayPal, type: select, proxies: [一键选择, 🔯 日本故转, 🔯 台湾故转,🔯 香港故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 🍎 Apple, type: select, proxies: [一键选择, 直连, 🔯 日本故转, 🔯 台湾故转,🔯 新加坡故转, 🔯 美国故转, 🔯 香港故转,♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点]}
+  - {name: 广告拦截, type: select, proxies: [REJECT, DIRECT, 一键选择], icon: "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/Advertising.png" }
 
 #节点过滤部分
+  # 自建节点，如没有，可注释掉
+  - {name: 自建节点, type: select, include-all: true, filter: "(?i)自建"}
+  # 如没有，可注释掉这行
   - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
   - {name: 台湾节点, type: select, include-all: true, filter: "(?i)台湾|tw|taiwan|tai wan"}
   - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日|jp|japan"}
@@ -52,6 +58,7 @@ proxy-groups:
 
 # 规则匹配部分
 rules:
+  - RULE-SET,秋风去广告规则,广告拦截
   - RULE-SET,private_domain,直连
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,ai,🤖 AI
@@ -84,8 +91,18 @@ rule-anchor:
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
-  private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
+  # 秋风去广告规则
+  秋风去广告规则:
+    type: http
+    behavior: classical
+    format: yaml
+    path: ./rule_providers/AWAvenue-Ads-Rule-Clash.yaml
+    #此处“/rule_providers”自行参考
+    url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml"
+    interval: 86400
   
+  
+  private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   ai: {  <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs" }
   youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
