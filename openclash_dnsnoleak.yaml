@@ -99,7 +99,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/Graydon96/hagezi_clash_yaml/main/hagezi_multipro.yaml"
+    url: "https://raw.githubusercontent.com/Graydon96/hagezi_clash_yaml/main/hagezi-multipro.yaml"
     path: ./ruleset/hagezi-multipro.yaml
     interval: 86400
   
