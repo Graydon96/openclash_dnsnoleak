@@ -58,7 +58,8 @@ proxy-groups:
 
 # 规则匹配部分
 rules:
-  - RULE-SET,秋风去广告规则,广告拦截
+  - RULE-SET,anti-ad,广告拦截
+  - RULE-SET,hagezi-multipro,广告拦截
   - RULE-SET,private_domain,直连
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,ai,🤖 AI
@@ -91,14 +92,15 @@ rule-anchor:
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
-  # 秋风去广告规则
-  秋风去广告规则:
+  # anti-ad去广告规则
+  anti-ad: { <<: *domain, url: "https://anti-ad.net/mihomo.mrs"}
+  # hagezi规则，主要负责海外域名过滤
+  hagezi-multipro:
     type: http
     behavior: classical
     format: yaml
-    path: ./rule_providers/AWAvenue-Ads-Rule-Clash.yaml
-    #此处“/rule_providers”自行参考
-    url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml"
+    url: "https://raw.githubusercontent.com/Graydon96/hagezi_clash_yaml/main/hagezi_multipro.yaml"
+    path: ./ruleset/hagezi-multipro.yaml
     interval: 86400
   
   
