@@ -23,6 +23,7 @@ proxy-groups:
   - {name: 📹 YouTube, type: select, proxies: [一键选择, 🔯 香港故转,🔯 台湾故转, 🔯 日本故转, 🔯 新加坡故转,🔯 美国故转, ♻️ 美国自动, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 🍀 Google, type: select, proxies: [一键选择, 🔯 香港故转, 🔯 台湾故转,🔯 日本故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 台湾自动,♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 🤖 AI, type: select, proxies: [一键选择, 🔯 日本故转, 🔯 台湾故转,🔯 新加坡故转, 🔯 美国故转, 🔯 香港故转, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🎮 NCsoft, type: select, proxies: [一键选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 👨🏿‍💻 GitHub, type: select, proxies: [一键选择, 🔯 香港故转,🔯 台湾故转, 🔯 日本故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 🐬 OneDrive, type: select, proxies: [一键选择, 直连, 🔯 日本故转, 🔯 台湾故转,🔯 新加坡故转, 🔯 美国故转, 🔯 香港故转,♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点]}
   - {name: 🪟 Microsoft, type: select, proxies: [一键选择, 直连, 🔯 日本故转, 🔯 台湾故转,🔯 新加坡故转, 🔯 美国故转, 🔯 香港故转,♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点]}
@@ -64,6 +65,7 @@ rules:
   - RULE-SET,private_domain,直连
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,ai,🤖 AI
+  - RULE-SET,ncsoft_domain,🎮 NCsoft
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,google_domain,🍀 Google
@@ -109,6 +111,7 @@ rule-providers:
     
   
   discord_domain: { <<: *classical-yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Discord/Discord.yaml"}
+  ncsoft_domain: { <<: *classical-yaml, url: "https://raw.githubusercontent.com/Graydon96/clash_domains/main/ncsoft.yaml"}
   private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   ai: {  <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs" }
   youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
