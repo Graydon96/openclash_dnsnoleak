@@ -26,6 +26,7 @@ proxy-groups:
   - {name: 👨🏿‍💻 GitHub, type: select, proxies: [一键选择, 🔯 香港故转,🔯 台湾故转, 🔯 日本故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 🐬 OneDrive, type: select, proxies: [一键选择, 直连, 🔯 日本故转, 🔯 台湾故转,🔯 新加坡故转, 🔯 美国故转, 🔯 香港故转,♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点]}
   - {name: 🪟 Microsoft, type: select, proxies: [一键选择, 直连, 🔯 日本故转, 🔯 台湾故转,🔯 新加坡故转, 🔯 美国故转, 🔯 香港故转,♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点]}
+  - {name: Discord, type: select, proxies: [一键选择, 🔯 香港故转,🔯 台湾故转, 🔯 日本故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动,♻️ 台湾自动, ♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点], icon: "https://file2.yordon.cn:66/icon/discord.jpg" }
   - {name: 🎵 TikTok, type: select, proxies: [一键选择, 🔯 日本故转, 🔯 台湾故转,🔯 新加坡故转, 🔯 美国故转, 🔯 香港故转,♻️ 香港自动, ♻️ 台湾自动,♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 📲 Telegram, type: select, proxies: [一键选择, 🔯 香港故转, 🔯 台湾故转,🔯 日本故转, 🔯 新加坡故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 台湾自动,♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
   - {name: 🎥 NETFLIX, type: select, proxies: [一键选择, 🔯 新加坡故转, 🔯 台湾故转,🔯 香港故转, 🔯 日本故转, 🔯 美国故转, ♻️ 香港自动, ♻️ 台湾自动,♻️ 日本自动, ♻️ 新加坡自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点,台湾节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
@@ -73,6 +74,8 @@ rules:
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,paypal_domain,💶 PayPal
+  - RULE-SET,discord_domain,Discord
+  
 
   - RULE-SET,gfw_domain,🚀 默认代理
   - RULE-SET,geolocation-!cn,🚀 默认代理
@@ -91,6 +94,7 @@ rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
+  classical-yaml: &classical-yaml {type: http, interval: 86400, behavior: classical, format: yaml}
 rule-providers: 
   # anti-ad去广告规则
   anti-ad: { <<: *domain, url: "https://anti-ad.net/mihomo.mrs"}
@@ -102,8 +106,9 @@ rule-providers:
     url: "https://raw.githubusercontent.com/Graydon96/hagezi_clash_yaml/main/hagezi-multipro.yaml"
     path: ./ruleset/hagezi-multipro.yaml
     interval: 86400
+    
   
-  
+  discord_domain: { <<: *classical-yaml, url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Discord/Discord.yaml"}
   private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   ai: {  <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs" }
   youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
